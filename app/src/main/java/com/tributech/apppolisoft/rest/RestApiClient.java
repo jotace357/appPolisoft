@@ -11,15 +11,15 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RestApiClient {
 
     private static OkHttpClient client = new OkHttpClient.Builder()
-            .connectTimeout(100, TimeUnit.SECONDS)
-            .readTimeout(100,TimeUnit.SECONDS)
+            .connectTimeout(7000, TimeUnit.SECONDS)
+            .readTimeout(7000,TimeUnit.SECONDS)
             .build();
     private static Retrofit retrofit;
 
     public static Retrofit getClient(){
         if(retrofit==null){
             retrofit = new Retrofit.Builder()
-                    .baseUrl("192.16.1.7:5000/")
+                    .baseUrl("http://192.168.0.106:5000/appiniciarsesion")
                     .client(client).addConverterFactory(GsonConverterFactory.create(new Gson())).build();
         }
         return retrofit;

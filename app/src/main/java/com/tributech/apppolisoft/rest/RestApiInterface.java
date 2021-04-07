@@ -18,7 +18,7 @@ public interface RestApiInterface {
                                    @Query("telm") String telm, @Query("tel") String tel, @Query("correo") String correo);
 
     @POST("/appiniciarsesion")
-    Call<ResponseBody> appiniciarsesion(@Path("dni_init") String dni_init, @Query("pass_init") String pass_init);
+    Call<ResponseBody> appiniciarsesion(@Query("dni_init") String dni_init, @Query("pass_init") String pass_init);
 
     @POST("/appcerrarsesion")
     Call<ResponseBody> appcerrarsesion();
